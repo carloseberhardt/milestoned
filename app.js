@@ -21,10 +21,10 @@ passport.deserializeUser(function(obj,done) {
 });
 
 passport.use(new GoogleStrategy({
-  //returnURL: 'http://milestoned.herokuapp.com/auth/google/return',
-  //realm: 'http://milestoned.herokuapp.com/'
-    returnURL: 'http://localhost:5000/auth/google/return',
-    realm: 'http://localhost:5000/'
+  returnURL: 'http://milestoned.herokuapp.com/auth/google/return',
+  realm: 'http://milestoned.herokuapp.com/'
+  //returnURL: 'http://localhost:5000/auth/google/return',
+  //realm: 'http://localhost:5000/'
   },
   function(identifier, profile, done) {
     process.nextTick(function () {
