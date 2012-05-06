@@ -14,10 +14,23 @@ div.navbar.navbar-fixed-top
                         a(href='#about') About
                     li
                         a(href='#contact') Contact
+                ul.nav.pull-right.signin-menu
+                    li.dropdown(data-dropdown='dropdown')
+                        if (user) 
+                            a.login-link.dropdown-toggle(href='#', data-toggle='dropdown') 
+                                user.displayName
+                        else
+                            a.login-link.dropdown-toggle(href='#', data-toggle='dropdown') Login
+                        ul.dropdown-menu(id='signin-dropdown')
+                            li
+                                if (user)
+                                    a(href='/logout') Logout
+                                else
+                                    a(href='/auth/google') Sign in with Google
 div.container
     div.hero-unit
-        h1 Everybody must get Milestoned...
-        p Milestoned keeps it real. 
+        h1 But I would not feel so all alone
+        h2 Everybody must get Milestoned
         p Food truck twee ethnic viral DIY fanny pack. Tattooed esse pariatur, nulla sed retro consectetur brooklyn occaecat keffiyeh flexitarian eu. Consequat mumblecore letterpress, in raw denim narwhal keytar. 
         p
             a.btn.btn-primary.btn-large Learn more &raquo;
@@ -36,4 +49,4 @@ div.container
             a.btn(href='#') View details &raquo;
     hr
     div.footer
-        p &copy; Carlos Eberhardt 2011
+        p &copy; Carlos Eberhardt 2012
