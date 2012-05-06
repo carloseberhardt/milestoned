@@ -3,11 +3,8 @@
  */
 
 exports.index = function(req, res){
-    if (req.user) {
-        res.send('Hello ' + req.user.displayName + '. You can <a href="/logout">logout.</a>');
-    } else {
-        res.send('This is the index. You can <a href="/auth/google">Sign in with Google</a>.')    
-    }
+    res.render('index', {user: req.user,
+                        title: 'Milestoned'});
 }
 
 exports.login = function(req,res) {
