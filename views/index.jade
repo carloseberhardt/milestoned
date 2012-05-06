@@ -17,8 +17,7 @@ div.navbar.navbar-fixed-top
                 ul.nav.pull-right.signin-menu
                     li.dropdown(data-dropdown='dropdown')
                         if (user) 
-                            a.login-link.dropdown-toggle(href='#', data-toggle='dropdown') 
-                                user.displayName
+                            a.login-link.dropdown-toggle(href='#', data-toggle='dropdown')= user.displayName
                         else
                             a.login-link.dropdown-toggle(href='#', data-toggle='dropdown') Login
                         ul.dropdown-menu(id='signin-dropdown')
