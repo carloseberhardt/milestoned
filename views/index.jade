@@ -36,9 +36,13 @@ div.container
     div.row
         div.span4
             h2 User Info
-            p= user.displayName
-            p= user.identifier
-            p= user.emails[0].value
+            if (user)
+                p= user.displayName
+                p= user.identifier
+                p= user.emails[0].value
+                p= user.id
+            else
+                p Ain't no user.
             a.btn(href='#') View details &raquo;
         div.span4
             h2 Message 2
