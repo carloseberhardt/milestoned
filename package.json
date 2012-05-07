@@ -8,5 +8,7 @@
     , "superagent": "*"
     , "passport": "*"
     , "passport-google": "*"
+    , "neo4j": "*"
+    , "coffee-script": "latest"
   }
 }
