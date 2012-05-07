@@ -1,4 +1,5 @@
 User = require("../models/user")
+
 exports.create = (req, res, next) ->
   User.create
     name: req.body["name"]
@@ -6,3 +7,7 @@ exports.create = (req, res, next) ->
   , (err, user) ->
     return next(err)  if err
     res.redirect "/"
+
+exports.signup = (req, res) ->
+    res.render "signup",
+    user: req.user

@@ -58,6 +58,7 @@ app.get "/logout", routes.site.logout
 app.get "/login", routes.site.login
 app.get "/nodes/:id", routes.site.nodes
 app.get "/users/:id", ensureAuthenticated, routes.users.show
+app.get "/users", routes.users.signup
 app.post "/users", routes.users.create
 app.get "/auth/google", passport.authenticate("google")
 app.get "/auth/google/return", passport.authenticate("google",

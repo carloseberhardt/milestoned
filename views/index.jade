@@ -35,8 +35,10 @@ div.container
             a.btn.btn-primary.btn-large Learn more &raquo;
     div.row
         div.span4
-            h2 Message 1
-            p Do excepteur pariatur brooklyn kogi. Biodiesel wes anderson qui swag, quis aliqua wolf terry richardson vegan ea placeat gentrify nisi brunch. Portland sustainable accusamus nulla sed. Non wolf ex nostrud letterpress. Authentic commodo dolor nisi thundercats williamsburg kale chips, nesciunt synth ullamco cosby sweater. Aliquip freegan pariatur, beard four loko polaroid single-origin coffee locavore forage squid ea vice food truck. Squid pop-up chambray labore, reprehenderit fixie hella banh mi proident ethical bicycle rights id umami narwhal.
+            h2 User Info
+            p= user.displayName
+            p= user.identifier
+            p= user.emails[0].value
             a.btn(href='#') View details &raquo;
         div.span4
             h2 Message 2
