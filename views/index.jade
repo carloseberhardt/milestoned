@@ -37,8 +37,8 @@ div.container
         div.span4
             h2 User Info
             if (user)
-                each val, key in user
-                    p #{key}: #{val}
+                p= user.displayName
+                p= user.emails[0].value
             else
                 p Ain't no user.
             a.btn(href='#') View details &raquo;
