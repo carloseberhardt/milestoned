@@ -44,9 +44,9 @@ User.get = (callback) ->
     callback null, new User(node)
 
 User.getByEmail = (callback) ->
-    db.getIndexedNode index, property, value, (err, node) ->
-        return callback(err) if err
-        callback null, new User(node)
+    db.getIndexedNode "users", "email", value, (err, node) ->
+      return callback(err) if err
+      callback null, new User(node)
 
 User.create = (data, callback) ->
   node = db.createNode(data)
@@ -55,4 +55,6 @@ User.create = (data, callback) ->
     return callback(err)  if err
     node.index IDX_NAME, IDX_KEY, IDX_VAL, (err) ->
       return callback(err)  if err
-      callback null, user
+      node.index "users", "email", user.email, (err) ->
+        return callback(err) if err
+        callback null, user

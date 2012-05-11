@@ -4,6 +4,7 @@ express = require("express")
 passport = require("passport")
 GoogleStrategy = require("passport-google").Strategy
 routes = require("./routes")
+User = require("./models/user")
 
 app = module.exports = express.createServer()
 
@@ -26,6 +27,13 @@ passport.use new GoogleStrategy(
 , (identifier, profile, done) ->
   process.nextTick ->
     profile.identifier = identifier
+    User.getByEmail profile.emails[0].value, (err, user) ->
+      if err
+        User.create 
+          name: profile.displayName
+          email: profile.emails[0].value,
+          (err, user) ->
+            console.log err if err
     done null, profile
 )
 
